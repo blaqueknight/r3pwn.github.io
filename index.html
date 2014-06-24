@@ -52,30 +52,30 @@
 		  Some were difficult, others easy, and one of them was so easy that I accidentally stumbled upon it. The interesting thing is that most of the Google Apps check for debugging values to be enabled in gservices.db, which is from the package com.google.android.gsf. Using sqlite3 to edit the database, you can add the valuesrequired to enable the debugging menus. That's all fine and dandy, but one problem remains: How does one find those values?
 		  The answer to this is simple: decompilation. You must decompile the app so that you can see most of it's original code and all of its resources decompiled. To do this, I used apktool. After the app was decompiled, I would just run "grep -r debug" from the root of the decompiled application source. This can spit out A LOT of info, so i would usually grep that output for other things, like "grep -r debug | grep enable" or "grep -r debug | string".
 		  This would limit my options to test. With Google Play books, though, I had to grep for "testing" because there were no references to any string with "debug". The debugging values for the apps are as follows (I'll explain why Newsstand doesn't have any in a minute):
-		  <b>finsky.debug_options_enabled</b> set to true (Google Play Store "Debug Settings" can be found right underneath the normal "Settings" Button)
-		  <b>babel_debugging</b> set to true (Google Hangouts "Debug Settings" can be found in the top right-hand corner)
-		  <b>music_debug_logs_enabled</b> set to true (Google Play Music "Debug Logging" can be found at the bottom of the standard Settings list)
-		  <b>books:show_testing_ui</b> set to true (Google Play Books "Testing Settings" can be found in the top right-hand corner)
-		  Now, to actually get to enabling those Debug settings. You can do this either via an adb shell or through Terminal Emulator. One thing, though, you do need root access.
-		  
-		  u0_a78@flo:/ $ su
-		  root@flo:/ # cd /data/data/com.google.android.gsf/databases
-		  root@flo:/data/data/com.google.android.gsf/databases # sqlite3 gservices.db
-		  SQLite Version 3.7.16 2013-03-18 11:39:23 [www.ptsoft.org] [www.ptdave.com]
-		  Enter ".help" for instructions
-		  Enter SQL statements terminated with a ";"
-		  sqlite> insert into overrides (name, value) VALUES ('finsky.debug_options_enabled', 'true');
-		  sqlite> 
-		  root@flo:/data/data/com.google.android.gsf/databases # reboot
-		  
-		  That should enable Google Play Store Debug Settings. Feel free to do that with the other values before rebooting. 
+		  <br><b>finsky.debug_options_enabled</b> set to true (Google Play Store "Debug Settings" can be found right underneath the normal "Settings" Button)
+		  <br><b>babel_debugging</b> set to true (Google Hangouts "Debug Settings" can be found in the top right-hand corner)
+		  <br><b>music_debug_logs_enabled</b> set to true (Google Play Music "Debug Logging" can be found at the bottom of the standard Settings list)
+		  <br><b>books:show_testing_ui</b> set to true (Google Play Books "Testing Settings" can be found in the top right-hand corner)
+		  <br>Now, to actually get to enabling those Debug settings. You can do this either via an adb shell or through Terminal Emulator. One thing, though, you do need root access.
+		  <br>
+		  <br>u0_a78@flo:/ $ su
+		  <br>root@flo:/ # cd /data/data/com.google.android.gsf/databases
+		  <br>root@flo:/data/data/com.google.android.gsf/databases # sqlite3 gservices.db
+		  <br>SQLite Version 3.7.16 2013-03-18 11:39:23 [www.ptsoft.org] [www.ptdave.com]
+		  <br>Enter ".help" for instructions
+		  <br>Enter SQL statements terminated with a ";"
+		  <br>sqlite> insert into overrides (name, value) VALUES ('finsky.debug_options_enabled', 'true');
+		  <br>sqlite> 
+		  <br>root@flo:/data/data/com.google.android.gsf/databases # reboot
+		  <br>
+		  <br>That should enable Google Play Store Debug Settings. Feel free to do that with the other values before rebooting. 
 		  Now, on to Newsstand. This one doesn't even require root or any values to be changed. Just Open Newsstand, open its Settings Menu, scroll to the bottom where you see the Version Number.
 		  Now, I know this may be difficult to some ;), but I need you to spam the crap out of that Version Number button. Ta-da! Debug Settings enabled! 
 		  It's not much, but it still is cool to have it enabled. (If you're curious, yes that is the one I found by accident) I am in the process of trying to enable Debugging menus on all the apps, but, as Zhuowei has informed me, all of the apps that use Dogfooding (Google Plus, Youtube, Translate, maybe more) check for a value in the BuildConfig, which we could change by just a simple Xposed module.
 		  Sorry to cut it short, but i really don't have anything else to say.
-		  Happy hacking!
-		   
-		   - r3pwn (Greg Willard)
+		  <br>Happy hacking!
+		  <br> 
+		  <br> - r3pwn (Greg Willard)
 		  
         </article>
       </div>
