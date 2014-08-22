@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-51916074-1', 'r3pwn.github.io');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+  <title>r3pwn</title>
+  <meta name="description" content="Modding Mobile Source Games">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<b>Introduction</b>
+<br>
+Hello, I am <a href="http://plus.google.com/+GregWillardr3pwn">r3pwn</a> and today, I guess, I will begin to teach you mobile source apps modification. Don't worry, it only consists of a few steps really.
+<br>
+<br>
+<b>Picking a file</b>
+<br>
+First you start with picking a file you want to modify. Then, extract it from your app's obb file.
+<br>
+<br>
+<b>What to do?</b>
+<br>
+Well, now, you make your changes to the file and put it under "/data/data/com.nvidia.valvesoftware.portal/files" or "/data/data/com.nvidia.valvesoftware.halflife2/files", depending on which game you own. You can find my modified files for Portal <a href="http://r3pwn.github.io/files/portal-modded.zip">here</a> and my modified files for Half-Life 2 <a href="http://r3pwn.github.io/files/hl2-modded.zip">here</a>. For my Portal files, extract the zip to the "portal" folder in Portal's app files. For my HL2 files, extract the zip to the "hl2" folder in HL2's app files. 
+<br>
+<br>
+<b>What do we do next?</b>
+<br>
+Now it's time for the final step. Permissions changing. Hook up your SHIELD via adb or open a Terminal Emulator and issue the following commands (Please note that "yourgamefiles" is /data/data/com.nvidia.valvesoftware.portal/files is you applied the mod to Portal or /data/data/com.nvidia.valvesoftware.halflife2/files if you applied the mod to Half-Life 2):
+<br>
+<i><br>su
+<br>cd yourgamefiles
+<br>ls -na</i>
+<br>
+<br>After that, you need to look for the 5 digit number that should appear twice on most items. Let's call that our "5dn" (stands for 5 digit number). Then issue the following commands:
+<br>
+<i><br>chown 5dn *
+<br>chown 5dn */*
+<br>chown 5dn */*/*
+<br>chown 5dn */*/*/*
+<br>chgrp 5dn *
+<br>chgrp 5dn */*
+<br>chgrp 5dn */*/*
+<br>chgrp 5dn */*/*/*</i>
+<br>
+<br>
+After that, your permissions should be fixed. Start up the game and see if anything looks/functions any different!
+<br>
+<br>Happy Modding!
+<br>- r3pwn
+<br>
+<br><b>P.S.</b> If this guide was too complicated for you <i>OR</i> you didn't understand it <i>OR</i> it didn't work for you, don't worry. I am making an automated patcher application as we speak. :)
+</body>
+</html>
