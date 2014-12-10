@@ -1,14 +1,17 @@
 <!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, user-scalable=no">
+    
+    <!-- Some custom styles to make things pretty. -->
+    <link rel="stylesheet" type="text/css" href="css/ui.css">
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
-  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+    <!-- RainbowJS Syntax Highlighting - Github Theme. 
+         For more themes, go to https://github.com/ccampbell/rainbow/tree/master/themes -->
+    <link rel="stylesheet" type="text/css" href="css/github.css">
+
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="javascripts/script.js"></script>
   <script>
@@ -24,28 +27,36 @@
   <title>r3pwn</title>
   <meta name="description" content="My little blog">
 
+    <!-- Modify header colors here to customize the look and feel of the site-->
+    <style>
+        
+        .header {
+            background: rgb(25, 25, 117);
+         }
+            .header h1 {
+                color: rgb(255, 209, 25);
+            }
+             .header h2 {
+                 font-weight:300;
+                 margin:0;
+                 color: rgb(255, 255, 255);
+             }
+    </style>
 </head>
 
-<body>
+<body class='yui3-skin-sam'>
 
-  <div class="wrapper">
-    <header>
-      <h1 class="title">r3pwn</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">My little blog</p>
-      <div id="main" role="main">
-<!--    <div class="download-bar">
-        <div class="inner">
-          {{#show_downloads?}}
-          <a href="{{tar_url}}" class="download-button tar"><span>Download</span></a>
-          <a href="{{zip_url}}" class="download-button zip"><span>Download</span></a>
-          {{/show_downloads?}}
-          <a href="{{github_url}}" class="code">View {{project_title}} on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div> -->
-        <article class="markdown-body">
+    <div id="headerMenu" class="yui3-menu yui3-menu-open yui3-menu-horizontal yui3-menu-fixed">
+        <span class="yui3-menu-heading">r3pwn</span>
+        <ul>
+            <li class="yui3-menu-active"><a href="http://r3pwn.github.io/">My Blog</a></li>
+            <li><a href="https://plus.google.com/+GregWillardr3pwn">My Google+</a></li>
+            <li><a href="http://www.twitter.com/r3pwn">My Twitter</a></li>
+            <li><a href="http://r3pwn.github.io/gkeys.html">Play Services Keys</a></li>
+        </ul>
+    </div>
+
+      <div id="main" class="content">
           <h3>#DebugAllTheThings - June 24th, 2014</h3>
 		  First blog post (woot, woot!). So, recently, I have been interested in apk (android app) modding. Specifically, Google Apps. Being taught by the finest (<a href="http://www.twitter.com/zhuowei">Zhuowei Zhang</a>), I quickly caught on and managed to enable internal debugging menus on the Google Play Store (I didn't work on this one), Google Hangouts (I helped a little), Google Play Music (All me), Google Play Books (All me), and Google Play Newsstand (All me).
 		  Some were difficult, others easy, and one of them was so easy that I accidentally stumbled upon it. The interesting thing is that most of the Google Apps check for debugging values to be enabled in gservices.db, which is from the package com.google.android.gsf. Using sqlite3 to edit the database, you can add the values required to enable the debugging menus. That's all fine and dandy, but one problem remains: How does one find those values?
@@ -75,27 +86,10 @@
 		  <br>Happy hacking!
 		  <br> 
 		  <br> - r3pwn (Greg Willard)
-		  
-        </article>
-      </div>
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="http://github.com/r3pwn" class="avatar"><img src="https://avatars2.githubusercontent.com/u/4053609?u=a9581385f31c718676fe95b9cf1a0294f57b9ca3&s=140" width="48" height="48"/></a>View <a href="http://github.com/r3pwn">r3pwn</a> on <a href="https://www.github.com">GitHub</a>, <a href="https://plus.google.com/+GregWillardr3pwn">Google+</a>, or <a href="http://www.twitter.com/r3pwn">Twitter</a>.
-	  </p>
-
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a>.</small>
-      </div>
-    </footer>
-  </div>
-<!--  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="{{tar_url}}" class="tar">tar</a><a href="{{zip_url}}" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
-
-  {{{google_analytics}}} -->
+<script type="text/javascript" src="js/ajf8ggy.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script src="js/rainbow.min.js"></script>
+<script src="js/language/generic.js"></script>
 </body>
 </html>
