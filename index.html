@@ -55,8 +55,13 @@
             <li><a href="http://r3pwn.github.io/gkeys.html">Play Services Keys</a></li>
         </ul>
     </div>
+    <div class="header yui3-u-1">
 
-      <div id="main" class="content">
+        <h1 class="yui3-u-1">r3pwn's Blog</h1>
+        <h2 class="yui3-u">A blog of stuff.</h2>
+
+    </div>
+      <div class="content">
           <h3>#DebugAllTheThings - June 24th, 2014</h3>
 		  First blog post (woot, woot!). So, recently, I have been interested in apk (android app) modding. Specifically, Google Apps. Being taught by the finest (<a href="http://www.twitter.com/zhuowei">Zhuowei Zhang</a>), I quickly caught on and managed to enable internal debugging menus on the Google Play Store (I didn't work on this one), Google Hangouts (I helped a little), Google Play Music (All me), Google Play Books (All me), and Google Play Newsstand (All me).
 		  Some were difficult, others easy, and one of them was so easy that I accidentally stumbled upon it. The interesting thing is that most of the Google Apps check for debugging values to be enabled in gservices.db, which is from the package com.google.android.gsf. Using sqlite3 to edit the database, you can add the values required to enable the debugging menus. That's all fine and dandy, but one problem remains: How does one find those values?
