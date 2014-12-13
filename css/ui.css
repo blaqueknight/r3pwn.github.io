@@ -69,22 +69,23 @@ a {
 
 /* NAVIGATION HEADER */
 #headerMenu {
-    background: #111;
-    color: #fff;
+    background: #00796b;
+    color: #ffffff;
     border-bottom: none;
 }
 
     #headerMenu a:hover {
-        background: #222;
-        border-color: #222;
+        background: #009688;
+        border-color: #009688;
+        color: #ffffff;
     }
     #headerMenu a {
-        color: #fff;
+        color: #ffffff;
         text-shadow: none;
     }
 
     #headerMenu .yui3-menu-active {
-        background: #222;
+        background: #009688;
     }
 
     .content code {
@@ -116,6 +117,7 @@ a {
     }
     #headerMenu .yui3-menu-heading {
         text-align: center;
+        text-color: #fff;
         display: block;
     }
     #headerMenu ul {
