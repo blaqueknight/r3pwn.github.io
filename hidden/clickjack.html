@@ -1,10 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title>Clickjack test page</title>
+    <title>Pulse Login - Florida Polytechnic University - Clickjack Demo</title>
     <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      html, body {
+        height:100%;
+        width:100%;
+        overflow:hidden;
+      }
+      table {
+        height:100%;
+        width:100%;
+        table-layout:static;
+        border-collapse:collapse;
+      }
       iframe {
-        width: 900px;
-        height: 800px;
+        height:100%;
+        width:100%;
         /* Use absolute positioning to line up update button with fake button */
         position: absolute;
         top: 100px;
@@ -22,9 +38,18 @@
         z-index: 1;
         width: 65px;
       }
+      .header {
+        border-bottom:1px solid #000
+      }
+      .content {
+        height:100%
+      }
     </style>
   </head>
   <body>
-    <iframe src="https://floridapolytechnic.org/pulse-login/" height="700" width="1000"></iframe>
+    <table>
+    <!--<tr><td class="header"><div><h1>Header</h1></div></td></tr>-->
+    <tr><td class="content"><iframe src="https://floridapolytechnic.org/pulse-login/"></iframe></td></tr>
+</table>
   </body>
 </html>
